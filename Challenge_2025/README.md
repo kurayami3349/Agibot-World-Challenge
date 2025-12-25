@@ -4,11 +4,11 @@
 
 我已将比赛所需的关键资源克隆至本地，包括官方的基础模型（Baseline）、冠军模型（Champion Model）以及用于评测的仿真平台。接下来的目标是逐步跑通并复现这些模型，深入理解其背后的算法与实现。
 
-## � 重要资源链接
+## 重要资源链接
 - **官方数据集**: [Hugging Face - AgiBotWorldChallenge-2025](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025)
   - 包含比赛所需的仿真数据、演示轨迹等。
 
-## �📂 目录结构
+## 📂 目录结构
 
 - **[eval_platform/](./eval_platform/)**
   - **描述**: 官方提供的仿真评测平台，基于 Genie Sim Benchmark。
@@ -26,10 +26,24 @@
 
 ### 阶段一：环境搭建与平台熟悉
 - [ ] **评测平台配置**: 完成 `eval_platform` 的环境依赖安装，确保仿真环境能正常启动。
+  - 参考安装文档：[Genie Sim 安装](https://agibot-world.com/sim-evaluation/docs/#/v2)
+  - 安装要求：Ubuntu 22.04 + Isaac sim 4.5.0
+  - 下载Geniesim数据集：[GenieSimAssets](https://huggingface.co/datasets/agibot-world/GenieSimAssets)
+  - 推荐使用**Docker**进行安装，避免环境配置问题。
 - [ ] **官方 Demo 运行**: 跑通平台自带的示例任务，验证环境的正确性。
 
 ### 阶段二：Baseline 模型复现
-- [ ] **数据准备**: 下载并整理官方数据集。
+- [ ] **数据准备**: 下载并整理官方数据集，Manipulation包含两块数据集，此外Agibot-World还拥有其他数据集。
+#### 数据集
+- **Manipulation-SimData**: 用于挑战阶段1的仿真数据。
+  - 下载链接：[Manipulation-SimData](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/tree/main/Manipulation-SimData)
+- **Manipulation-RealRobotData**: 用于挑战阶段2的真实机器人数据。
+  - 下载链接：[Manipulation-RealRobotData](https://huggingface.co/datasets/agibot-world/AgiBotWorldChallenge-2025/tree/main/Manipulation-RealRobot)
+
+- **额外数据集**: 如果需要，从Hugging Face下载AgibotWorld-Alpha数据集（或AgibotWorld-Beta数据集，较大）。
+  - 下载链接：[AgibotWorld-Alpha](https://huggingface.co/datasets/agibot-world/AgiBotWorld-Alpha)
+  - 下载链接：[AgibotWorld-Beta](https://huggingface.co/datasets/agibot-world/AgiBotWorld-Beta)
+
 - [ ] **代码阅读**: 理解 Baseline 的数据加载、模型结构（如 UniVLA 等）及训练逻辑。
 - [ ] **推理验证**: 使用官方提供的预训练权重在仿真环境中进行推理，复现基线分数。
 - [ ] **训练复现**: 尝试从头训练 Baseline 模型（或进行微调），观察 Loss 收敛情况。
@@ -45,3 +59,8 @@
 
 ---
 *注：本 README 将随着复现进度实时更新。*
+
+## 学习记录
+- 12.25 梳理了一下项目的目录结构，了解了评估平台与模型的沟通：eval_platform基于Isaac sim 4.5.0搭建，使用Docker进行部署；而模型通过ros与eval_platform进行通信，模型的训练可以单独进行，而eval评估需要依赖该Docker容器进行。[参考ROS代码](./baseline/UniVLA/genie_sim_ros.py)
+
+
