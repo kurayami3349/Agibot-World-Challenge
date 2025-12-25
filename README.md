@@ -1,2 +1,34 @@
-# Agibot-World-Challenge
-recording agibot world challenge
+# Agibot World Challenge (智元世界挑战赛) - 个人记录仓库
+
+本仓库是我个人用于记录参加 **Agibot World Challenge (智元世界挑战赛)** 进度的仓库，非官方仓库。
+
+这里包含了我在比赛过程中的代码、实验记录以及相关资源的整理。
+
+## 🔗 官方资源
+本仓库的代码基于官方提供的评估平台和基准测试。如果您正在寻找官方资源，请访问：
+- **官方网站**: [Agibot World Challenge](https://agibot-world.cn/challenge)
+- **官方文档**: 请参考官方发布的最新文档和指南。
+
+## 📂 仓库内容
+
+### [Challenge 2025 (2025年挑战赛)](./Challenge_2025/eval_platform/README.md)
+记录了我参与 2025 年挑战赛的相关工作，主要聚焦于基于 **Genie Sim Benchmark** 的具身智能操作任务。
+- **主要内容**:
+  - 针对官方发布的10+个操作任务的解决方案与尝试。
+  - 仿真环境配置与调试记录。
+  - 模型训练与评估结果。
+  - 个人关于任务优化的笔记与心得。
+
+### [Challenge 2026 (2026年挑战赛)](./Challenge_2026/README.md)
+*计划中* - 预留给未来可能参与的 2026 年挑战赛。
+
+## 🚀 个人进度与笔记
+- [x] 仓库初始化
+- [ ] 环境配置完成
+- [ ] 跑通 Baseline 模型
+- [ ] 任务优化尝试
+
+*(此列表将随着我的比赛进度持续更新)*
+
+## 📄 许可证
+本仓库中引用的官方代码遵循其原始许可证（Mozilla Public License 2.0）。我个人的修改和新增代码仅供学习交流使用。
