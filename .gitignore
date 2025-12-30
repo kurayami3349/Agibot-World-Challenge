@@ -1,3 +1,8 @@
+# Dataset files
+Challenge_2025/datasets/**
+!Challenge_2025/datasets/datasets-here.md
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

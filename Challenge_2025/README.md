@@ -63,4 +63,7 @@
 ## 学习记录
 - 12.25 梳理了一下项目的目录结构，了解了评估平台与模型的沟通：eval_platform基于Isaac sim 4.5.0搭建，使用Docker进行部署；而模型通过ros与eval_platform进行通信，模型的训练可以单独进行，而eval评估需要依赖该Docker容器进行。[参考ROS代码](./baseline/UniVLA/genie_sim_ros.py)
 
+-12.30 构建了eval_platform的Docker容器，该镜像强依赖isaac sim 4.5.0，在构建时需要注意版本匹配，除此之外需要手动指定**Isaac Sim的asset路径**，然后使用[bash启动脚本](./eval_platform/scripts/start.sh)进入容器，首次启动容器后续可以直接使用[into脚本](./eval_platform/scripts/into.sh)回到容器内。
+> 注意：在启动容器时需要指定Isaac Sim的asset路径，且需要使用GUI界面则应当更换使用[start_gui.sh脚本](./eval_platform/scripts/start_gui.sh)启动容器。
+
 
