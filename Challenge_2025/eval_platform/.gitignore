@@ -21,8 +21,8 @@ record*/
 *.tar.gz
 *.zip
 *.7z
-3rdparty
-!3rdparty/**
+# 3rdparty
+# !3rdparty/**
 
 checkpoint
 checkpoints
